@@ -73,3 +73,28 @@ console.log("9)", todosMayoresA1000);
 
 const incluyeCampera = nombres.includes("Campera");
 console.log("10)", incluyeCampera);
+
+//Parte 4:
+//11. Ordenar con .sort(): Ordená los productos por precio de menor a mayor. Mostrá el nuevo array ordenado.
+
+const productosOrdenados = [...productos].sort(function(a, b) {
+    return a.precio - b.precio;
+});
+console.log("11)", productosOrdenados);
+
+//12. Generar mensajes personalizados con .map(): Usá .map() para crear un array de strings como este: "El producto Remera cuesta $1500 y pertenece a la categoría Ropa." Mostrá el resultado en consola.
+
+const mensajes = productos.map(function(producto) {
+    return `El producto ${producto.nombre} cuesta $${producto.precio} y pertenece a la categoría ${producto.categoria}.`;
+});
+console.log("12)", mensajes);
+
+//13. Agregar productos con spread: Crear un nuevo array de objetos con más productos. Utilizar el operador spread para combinar ambos arrays de productos en un nuevo array. Mostrar el array resultante en la consola.
+
+const nuevosProductos = [
+    { id: 6, nombre: "Medias", precio: 900, categoria: "Ropa" },
+    { id: 7, nombre: "Botas", precio: 12000, categoria: "Calzado" }
+];
+
+const todosLosProductos = [...productos, ...nuevosProductos];
+console.log("13)", todosLosProductos);
