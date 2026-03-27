@@ -24,3 +24,32 @@ console.log("3)");
 productos.forEach(function(producto) {
     console.log(`Producto: ${producto.nombre} - Precio: $${producto.precio}`);
 });
+
+//Parte 2: Métodos de transformación y filtrado
+//4. Obtener solo los nombres con .map(): Creá un nuevo array que contenga únicamente los nombres de los productos. Mostralo en consola. Resultado esperado: ["Remera", "Pantalón", "Zapatillas", "Gorra", "Campera"]
+
+const nombres = productos.map(function(producto) {
+    return producto.nombre;
+});
+console.log("4)", nombres);
+
+//5. Filtrar por categoría con .filter(): Creá un nuevo array que contenga solo los productos cuya categoría sea "Ropa". Mostrar en consola.
+
+const productosRopa = productos.filter(function(producto) {
+    return producto.categoria === "Ropa";
+});
+console.log("5)", productosRopa);
+
+//6. Filtrar por precio con .filter(): Creá un array que contenga todos los productos cuyo precio sea mayor a $3000.
+
+const productosMayoresA3000 = productos.filter(function(producto) {
+    return producto.precio > 3000;
+});
+console.log("6)", productosMayoresA3000);
+
+//7. Buscar un producto específico con .find(): Usá el método .find() para encontrar el objeto que tenga como nombre "Gorra". Mostralo completo en consola.
+
+const gorra = productos.find(function(producto) {
+    return producto.nombre === "Gorra";
+});
+console.log("7)", gorra);
